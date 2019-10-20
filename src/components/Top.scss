@@ -30,6 +30,11 @@
 
     .t-notifications-container {
         display: none;
+
+        background: #dfdfdf;
+        padding: 20px 20px 0px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
         
         position: absolute;
         top: 60px;
