@@ -4,8 +4,6 @@ import Card from '../../components/Card'
 import { OptionIcons } from '../../toolkit/utils'
 import { getManager, Product } from '../../API'
 
-let seila: any[] = [1, 1]
-
 interface State {
 	products: Product[]
 }
@@ -67,19 +65,19 @@ export default class Sales extends React.Component<{}, State> {
 									</div>
 								</div>
 								<div className="sg-body">
-									{seila.map((sla, index) => (
-										<div className="sgb-item" key={index}>
+									{this.state.products.map(prod => (
+										<div className="sgb-item" key={prod.id}>
 											<div className="col-1">
-												<span>100</span>
+												<span>{prod.variations[0].totalQuantity}</span>
 											</div>
 											<div className="col-2">
 												<div className="si-prod">
 													<div className="sp-photo">
-														<img />
+														<img src={prod.variations[0].images[0]} alt="daioshdosaihdoisadhsa" />
 													</div>
 													<div className="sp-info">
 														<div className="si-name">
-															<span>Nome do Produto</span>
+															<span>{prod.title}</span>
 														</div>
 														<div className="si-link">
 															<a href="#">Acessar</a>
@@ -88,13 +86,13 @@ export default class Sales extends React.Component<{}, State> {
 												</div>
 											</div>
 											<div className="col-3">
-												<span>Sapatos</span>
+												<span>{prod.category}</span>
 											</div>
 											<div className="col-4">
-												<span>500</span>
+												<span>{prod.variations[0].accessCount}</span>
 											</div>
 											<div className="col-5">
-												<span>10</span>
+											<span>{prod.variations[0].saleCount}</span>
 											</div>
 										</div>
 									))}

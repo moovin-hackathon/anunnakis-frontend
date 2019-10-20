@@ -2,7 +2,7 @@ import React from 'react'
 import './style.scss'
 import Card from '../../components/Card'
 import { OptionIcons } from '../../toolkit/utils'
-import { getMostAccessedProducts, Product, getMostAccessedCategory, getLessAccessedCategory, getMostSaledProducts, Variation } from '../../API'
+import { getMostAccessedProducts, Product, getMostAccessedCategory, getLessAccessedCategory, getMostSaledProducts, Variation, getManager, getProducts } from '../../API'
 
 let seila = [1, 1, 1, 1, 1, 1, 1, 1]
 
@@ -17,6 +17,7 @@ interface State {
         category: string
         accessCount: Variation['accessCount']
     }
+    stockProducts: Product[]
 }
 
 export default class Dashboard extends React.Component<{}, State> {
@@ -31,7 +32,8 @@ export default class Dashboard extends React.Component<{}, State> {
         lessAccessedCategory: {
             category: 'Carregando...',
             accessCount: '0'
-        }
+        },
+        stockProducts: []
     }
 
     componentDidMount() {
@@ -53,6 +55,8 @@ export default class Dashboard extends React.Component<{}, State> {
             }))
         getMostSaledProducts()
             .then(res => this.setState({ mostSaledProducts: res.data.items }))
+        getProducts()
+            .then(res => this.setState({ stockProducts: res.data.items }))
     }
 
     render() {
@@ -92,16 +96,16 @@ export default class Dashboard extends React.Component<{}, State> {
                             </div>
                         </div>
                         <div className="lc-items">
-                            {seila.map((sla, index) => (
-                                <div key={index} className="lc-item">
-                                    <span>Exemplo de Busca</span>
-                                    <span>20</span>
+                            {this.state.stockProducts.map(prod => (
+                                <div key={prod.id} className="lc-item">
+                                    <span>{prod.title}</span>
+                                    <span>{prod.variations[0].totalQuantity}</span>
                                 </div>
                             ))}
                         </div>
                     </div>
                     <div className="card-controller">
-                        <button>Relatório Completo</button>
+                        <button onClick={() => window.location.href = "/stock"}>Relatório Completo</button>
                     </div>
                 </div>
             </Card>

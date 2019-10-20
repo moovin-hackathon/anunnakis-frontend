@@ -11,16 +11,4 @@
     padding: 50px 100px;
   }
 
-  &::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
-
-  &::-webkit-scrollbar {
-    width: 5px;
-    background-color: transparent;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: #0cba4e;
-  }
 }

@@ -21,6 +21,14 @@ export const getLessAccessedCategory: () => AxiosPromise<CategoryResponse[]> = (
 
 export const getManager: () => AxiosPromise<Response<Product>> = () => api.get('/manager')
 
+export const getNeedBuyProducts: () => AxiosPromise<Response<Product>> = () => api.get('/product/need_buy')
+
+export const getNeedSellProducts: () => AxiosPromise<Response<Product>> = () => api.get('/product/need_sell')
+
+export const getProducts: () => AxiosPromise<Response<Product>> = () => api.get('/product')
+
+export const getNotifications: () => AxiosPromise<Response<Notification>> = () => api.get('/notification?viewed=false')
+
 export interface CategoryResponse {
     category: string
     variation: Variation
@@ -50,6 +58,18 @@ export interface Variation {
     previousPrice: string
     productId: Product['id']
     sku: string
-    stockQuantitiy: number
+    stockQuantity: number
+    totalQuantity: number
+    saleCount: number
     uri: string
+}
+
+export interface Notification {
+    id: string
+    identifier: string
+    type: string
+    code: string
+    message: string
+    createdAt: string
+    viewed: boolean
 }
