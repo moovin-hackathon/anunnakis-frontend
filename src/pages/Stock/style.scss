@@ -1,0 +1,146 @@
+.Stock {
+  .card-controller {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 100px;
+
+    button {
+      padding: 7px 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: unset;
+      background-color: #0cba4e;
+      font-weight: bold;
+      color: white;
+      border-radius: 12px;
+      outline: unset;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  .StockCard {
+    padding: 20px 50px;
+    .sc-header {
+      display: flex;
+      justify-content: flex-end;
+      padding: 20px 0;
+
+      select {
+        margin-left: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        padding: 0 10px;
+        border-radius: 20px;
+        outline: unset;
+        background-color: white;
+      }
+
+      span {
+        margin-left: 30px;
+      }
+    }
+    .sc-content {
+      display: flex;
+      margin-top: 20px;
+      .scc-col {
+        flex: 1;
+
+        &:nth-child(1) {
+          margin-right: 10px;
+        }
+
+        &:nth-child(2) {
+          margin-left: 10px;
+        }
+
+        .sc-title {
+          font-weight: bold;
+          text-transform: uppercase;
+          font-size: 14px;
+          margin-bottom: 20px;
+        }
+
+        .sc-list {
+          max-height: 300px;
+          overflow-y: scroll;
+          .col-1 {
+            display: flex;
+            min-width: 100px;
+            justify-content: center;
+            align-items: center;
+          }
+          .col-2 {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+          }
+
+          .scl-header {
+            display: flex;
+            font-size: 14px;
+
+            .col-1 {
+              height: 30px;
+            }
+            .col-2 {
+              padding-left: 10px;
+            }
+          }
+
+          .scl-body {
+            .sb-item {
+              display: flex;
+
+              .col-1 {
+                height: 100px;
+                border: 1px solid rgba(0, 0, 0, 0.2);
+              }
+              .col-2 {
+                border: 1px solid rgba(0, 0, 0, 0.2);
+
+                .sb-prod {
+                  display: flex;
+
+                  .sbp-photo {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100px;
+
+                    img {
+                      background-color: black;
+                      border-radius: 100%;
+                      width: 50px;
+                      height: 50px;
+                    }
+                  }
+
+                  .sbp-info {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    font-size: 12px;
+
+                    a {
+                      text-decoration: none;
+                      &:hover {
+                        text-decoration: underline;
+                      }
+                      color: #0cba4e;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
