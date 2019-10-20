@@ -1,0 +1,186 @@
+.Search {
+  .card-controller {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 100px;
+
+    button {
+      padding: 7px 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: unset;
+      background-color: #0cba4e;
+      font-weight: bold;
+      color: white;
+      border-radius: 12px;
+      outline: unset;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  .SearchCard {
+    display: flex;
+    padding: 60px 80px;
+    .sc-col {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+
+      &:nth-child(1) {
+        .scc-title {
+          padding: 0 50px;
+          font-weight: bold;
+          text-transform: uppercase;
+          font-size: 14px;
+        }
+        .scc-list {
+          .sccl-item {
+            padding: 5px 50px;
+            margin-top: 15px;
+            font-size: 12px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+          }
+        }
+      }
+      &:nth-child(2) {
+        .scc-header {
+          display: flex;
+          justify-content: flex-end;
+
+          select {
+            margin-left: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            padding: 0 10px;
+            border-radius: 20px;
+            outline: unset;
+            background-color: white;
+          }
+
+          span {
+            margin-left: 50px;
+          }
+        }
+
+        .scc-balloon-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex: 1;
+
+          .sbc-balloon {
+            display: flex;
+            background-color: #cffef1;
+            border-radius: 50px;
+            padding: 50px 20px;
+            margin-left: 30px;
+
+            .sbcb-icon {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-right: 20px;
+              min-width: 100px;
+              img {
+                width: 80px;
+                height: 80px;
+              }
+            }
+            .sbcb-content {
+              .sc-title {
+                font-weight: bold;
+                margin-bottom: 10px;
+              }
+              .sc-text {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .SalexSearchContainer {
+    margin-top: 50px;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    padding: 40px 60px;
+
+    .titles {
+      display: flex;
+      flex-direction: column;
+      font-weight: bold;
+
+      span {
+        font-size: 14px;
+        &:nth-child(1) {
+          text-transform: uppercase;
+          margin-bottom: 20px;
+        }
+      }
+    }
+    .cards {
+      display: flex;
+      margin-top: 20px;
+
+      .card {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 30px 0;
+        flex: 1;
+        background-color: white;
+        box-shadow: 0 5px 2px 0 rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+
+        button {
+          border: unset;
+          outline: unset;
+          background-color: transparent;
+          border: 1px solid #0cba4e;
+          padding: 5px 20px;
+          border-radius: 20px;
+          transition: 0.3s;
+          font-weight: bold;
+          font-size: 13px;
+          cursor: pointer;
+
+          &.active,
+          &:hover {
+            color: white;
+            background: #0cba4e;
+          }
+        }
+
+        &:nth-child(1) {
+          margin-right: 15px;
+        }
+        &:nth-child(2) {
+          margin-left: 15px;
+        }
+      }
+    }
+    .list {
+      margin-top: 30px;
+      padding: 0 20px;
+      .list-header {
+        font-size: 14px;
+        font-weight: bold;
+      }
+      .list-body {
+        .lb-item {
+          margin-top: 10px;
+          padding: 5px 50px;
+          font-size: 12px;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+}
