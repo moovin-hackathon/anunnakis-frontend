@@ -1,7 +1,14 @@
 .Container {
+  background-color: #dfdfdf;
   flex: 1;
   max-height: 100%;
   overflow-y: scroll;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 100px;
+  }
 
   &::-webkit-scrollbar-track {
     background-color: transparent;
@@ -13,6 +20,6 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #0CBA4E;
+    background-color: #0cba4e;
   }
 }

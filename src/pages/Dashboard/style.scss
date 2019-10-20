@@ -1,0 +1,171 @@
+.Dashboard {
+  .row-cards {
+    display: flex;
+
+    .Card {
+      &:nth-child(1) {
+        margin-right: 15px;
+      }
+      &:nth-child(2) {
+        margin-left: 15px;
+      }
+      .card-controller {
+        padding: 30px 40px;
+      }
+    }
+  }
+
+  .Card {
+    margin-bottom: 40px;
+
+    .card-controller {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 30px 100px;
+
+      button {
+        padding: 7px 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: unset;
+        background-color: #0cba4e;
+        font-weight: bold;
+        color: white;
+        border-radius: 12px;
+        outline: unset;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  .AccessesCard {
+    .most-accessed-prods {
+      .map-title {
+        padding: 30px 100px;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: bold;
+      }
+      .map-prods {
+        display: flex;
+        border-bottom: 1px solid grey;
+        padding: 0 100px;
+        padding-bottom: 30px;
+
+        .mapp-prod {
+          display: flex;
+          flex: 1;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 20px;
+            background-color: black;
+            border-radius: 100%;
+          }
+
+          span {
+            font-size: 14px;
+          }
+
+          a {
+            text-decoration: none;
+            &:hover {
+              text-decoration: underline;
+            }
+            color: #0cba4e;
+            font-size: 12px;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+
+    .category-review {
+      .cr-title {
+        padding: 30px 100px;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: bold;
+      }
+      .cr-cards {
+        display: flex;
+        padding: 0 50px;
+
+        .crc-card {
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+          border-radius: 40px;
+          border: 1px solid grey;
+          margin: 0 20px;
+
+          .crcc-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid grey;
+            font-weight: bold;
+            text-transform: uppercase;
+          }
+
+          .crcc-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0;
+            font-weight: bold;
+            font-size: 48px;
+          }
+        }
+      }
+    }
+  }
+
+  .SearchesCard,
+  .StockCard {
+    .list-container {
+      .lc-header {
+        padding: 30px 60px;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 14px;
+      }
+      .lc-items {
+        .lc-item {
+          font-size: 12px;
+          padding: 0 60px;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+          padding-bottom: 5px;
+          padding-top: 15px;
+        }
+      }
+    }
+  }
+
+  .StockCard {
+    .list-container {
+      .lc-header {
+        display: flex;
+        justify-content: space-between;
+      }
+      .lc-items {
+        .lc-item {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+}

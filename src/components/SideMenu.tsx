@@ -19,8 +19,8 @@ const SideMenu: React.FC<Props> = (props) => {
                 </div>
             </div>
             {props.options.map((option, index) => (
-                <a className="sm-dashboard-menu-option" href={`/${option.name}`}>
-                    <img src={OptionIcons[option.name as OptionName]} />
+                <a key={index} className="sm-dashboard-menu-option" href={`/${option.name}`}>
+                    <img alt={option.label} src={OptionIcons[option.name as OptionName]} />
                     <span>{option.label}</span>
                 </a>
             ))}
