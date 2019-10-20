@@ -1,0 +1,68 @@
+.Top {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    height: 60px;
+    width: 100%;
+    background-color: grey;
+
+    .bell-icon {
+        cursor: pointer;
+        margin-right: 190px;
+
+        img {
+            width: 20px;
+            height: 25px;
+        }
+    }
+
+    .t-notifications-container {
+        display: none;
+        
+        position: absolute;
+        top: 60px;
+        right: 200px;
+        
+        .tnc-notification {
+            position: relative;
+            display: flex;
+            background-color: white;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 2px 0 rgba(0,0,0,0.5);
+            padding: 20px;
+
+            span {
+                position: absolute;
+                right: 10px;
+                top: 10px;
+                font-size: 12px;
+                color: #0cba4e;
+                font-weight: bolder;
+                cursor: pointer;
+            }
+
+            div {
+                &:nth-child(2) {
+                    margin-right: 20px;
+                    img {
+                        width: 60px;
+                        height: 60px;
+                        background-color: black;
+                    }
+                }
+                &:nth-child(3) {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+
+        &.opened {
+            display: initial;
+        }
+    }
+
+}

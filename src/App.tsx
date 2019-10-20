@@ -5,10 +5,12 @@ import SideMenu from './components/SideMenu'
 import Container from './components/Container'
 
 import { MenuOptions } from './toolkit/utils'
+import Top from './components/Top'
 
 const App: React.FC = () => {
   return (
     <div className="App">
+      <Top />
       <SideMenu
         options={MenuOptions}
       />

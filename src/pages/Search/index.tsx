@@ -65,10 +65,6 @@ const Search: React.FC = () => (
             </div>
             <div className="cards">
                 <div className="card">
-                    <button>mais buscadas</button>
-                    <button>menos buscadas</button>
-                </div>
-                <div className="card">
                     <button>mais vendidas</button>
                     <button>menos vendidas</button>
                 </div>

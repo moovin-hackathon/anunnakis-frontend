@@ -14,9 +14,6 @@ export const MenuOptions: Option[] = [
         name: 'accesses',
         label: 'Acessos'
     }, {
-        name: 'search',
-        label: 'Pesquisa'
-    }, {
         name: 'stock',
         label: 'Estoque'
     }, {
