@@ -1,4 +1,29 @@
 .Accesses {
+  .card-controller {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 100px;
+
+    button {
+      padding: 7px 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: unset;
+      background-color: #0cba4e;
+      font-weight: bold;
+      color: white;
+      border-radius: 12px;
+      outline: unset;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
   .AccessesCard {
     padding: 30px 0;
     padding-bottom: 0;
@@ -171,31 +196,6 @@
         }
       }
     }
-    .card-controller {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      padding: 30px 100px;
-
-      button {
-        padding: 7px 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: unset;
-        background-color: #0cba4e;
-        font-weight: bold;
-        color: white;
-        border-radius: 12px;
-        outline: unset;
-        cursor: pointer;
-        transition: 0.3s;
-
-        &:hover {
-          opacity: 0.8;
-        }
-      }
-    }
   }
   .category-review {
     border-bottom: 1px solid grey;
@@ -237,6 +237,52 @@
           font-size: 48px;
         }
       }
+    }
+  }
+
+  .category-chart {
+    padding: 40px 60px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid grey;
+    .col-1 {
+      display: flex;
+      justify-content: flex-end;
+      min-width: 100px;
+      margin-right: 30px;
+    }
+    .col-2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 50px;
+      margin-right: 20px;
+    }
+
+    .cc-header {
+      display: flex;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+    .cc-body {
+      .ccb-item {
+        display: flex;
+        margin: 10px 0;
+        .col-1 {
+          font-size: 12px;
+        }
+        .col-2 {
+          font-size: 12px;
+        }
+        .col-3 {
+          background-color: rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+    .card-controller {
+      padding: 0;
+      padding-top: 20px;
     }
   }
 }

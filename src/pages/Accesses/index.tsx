@@ -5,6 +5,22 @@ import { OptionIcons } from '../../toolkit/utils'
 
 let seila = [1, 1, 1, 1, 1, 1, 1, 1]
 
+let seila2 = [{
+    category: 'Feminino',
+    views: 1000,
+    rate: 100
+},
+{
+    category: 'Feminino',
+    views: 1000,
+    rate: 60
+},
+{
+    category: 'Feminino',
+    views: 1000,
+    rate: 40
+}]
+
 const Accesses: React.FC = () => (
     <div className="Accesses">
         <Card title="Acessos" icon={OptionIcons['accesses']}>
@@ -102,6 +118,35 @@ const Accesses: React.FC = () => (
                         1.000
                     </div>
                 </div>
+            </div>
+        </div>
+        <div className="category-chart">
+            <div className="cc-header">
+                <div className="col-1">
+                    <span>Categorias</span>
+                </div>
+                <div className="col-2">
+                    <span>Views</span>
+                </div>
+                <div className="col-3">
+                    {/* TODO: Pegar arrows do font awesome */}
+                </div>
+            </div>
+            <div className="cc-body">
+                {seila2.map((naosei, index) => (
+                    <div className="ccb-item">
+                        <div className="col-1">
+                            {naosei.category}
+                        </div>
+                        <div className="col-2">
+                            {naosei.views}
+                        </div>
+                        <div style={{ width: `${naosei.rate}%` }} className="col-3"></div>
+                    </div>
+                ))}
+            </div>
+            <div className="card-controller">
+                <button>Baixar Relatório</button>
             </div>
         </div>
     </div>
