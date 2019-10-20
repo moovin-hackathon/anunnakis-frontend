@@ -2,7 +2,7 @@ import React from 'react'
 import './Top.scss'
 
 import BellIcon from '../assets/icons/bell.png'
-import { getNotifications, Notification } from '../API'
+import { getNotifications, Notification, dismissNotification } from '../API'
 
 interface INotification {
     notifications: Notification[]
@@ -19,6 +19,7 @@ const Top: React.FC<{}> = () => {
     })
 
     React.useEffect(() => {
+        fetchNotifications()
         setInterval(() => {
             !menuOpen && fetchNotifications()
         }, 5000)
@@ -33,15 +34,28 @@ const Top: React.FC<{}> = () => {
             }))
     }
 
+    let dismiss = (id: Notification['id']) => {
+        dismissNotification(id)
+            .then(() => setNotifications({
+                notifications: notifications.notifications.filter(n => n.id !== id),
+                total: notifications.total - 1
+            }))
+    }
+
     return (
         <div className="Top">
             <div onClick={() => setMenuOpen(!menuOpen)} className="bell-icon">
                 <img alt="bell" src={BellIcon} />
+                {!!notifications.total && (
+                    <div className="notification-badge">
+                        {notifications.total}
+                    </div>
+                )}
             </div>
             <div className={`t-notifications-container${menuOpen ? ' opened' : ''}`}>
                 {notifications.notifications.map((notification, index) => (
                     <div key={index} className="tnc-notification">
-                        <span onClick={() => alert('fodasi')}>X</span>
+                        <span onClick={() => dismiss(notification.id)}>X</span>
                         <div>
                             <img />
                         </div>

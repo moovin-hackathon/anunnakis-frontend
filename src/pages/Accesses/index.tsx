@@ -2,26 +2,10 @@ import React from 'react'
 import './style.scss'
 import Card from '../../components/Card'
 import { OptionIcons } from '../../toolkit/utils'
-import { Product, getMostAccessedProducts, Variation, getMostAccessedCategory, getLessAccessedCategory } from '../../API'
+import { Product, getMostAccessedProducts, Variation, getMostAccessedCategory, getLessAccessedCategory, CategoryResponse, getMostAccessedCategories } from '../../API'
 
 import IdeaIcon from '../../assets/icons/idea.png'
 import ChampIcon from '../../assets/icons/champion.png'
-
-let seila2 = [{
-    category: 'Feminino',
-    views: 1000,
-    rate: 100
-},
-{
-    category: 'Feminino',
-    views: 1000,
-    rate: 60
-},
-{
-    category: 'Feminino',
-    views: 1000,
-    rate: 40
-}]
 
 interface State {
     mostAccessedProducts: Product[]
@@ -33,6 +17,7 @@ interface State {
         category: string
         accessCount: Variation['accessCount']
     }
+    mostAccessedCategories: CategoryResponse[]
 }
 
 export default class Accesses extends React.Component<{}, State> {
@@ -54,6 +39,8 @@ export default class Accesses extends React.Component<{}, State> {
                     category: res.data[0].category
                 }
             }))
+        getMostAccessedCategories()
+            .then(res => this.setState({ mostAccessedCategories: res.data }))
     }
 
     state: State = {
@@ -65,7 +52,8 @@ export default class Accesses extends React.Component<{}, State> {
         lessAccessedCategory: {
             category: 'Carregando...',
             accessCount: '0'
-        }
+        },
+        mostAccessedCategories: []
     }
 
     render() {
@@ -152,7 +140,7 @@ export default class Accesses extends React.Component<{}, State> {
                     <div className="cr-cards">
                         <div className="crc-card">
                             <div className="crcc-title">
-                                <span>{this.state.mostAccessedCategory.category}</span>
+                                <span>{this.state.mostAccessedCategory.category.split(' > ')[this.state.mostAccessedCategory.category.split(' > ').length - 1]}</span>
                             </div>
                             <div className="crcc-content">
                                 <span>{this.state.mostAccessedCategory.accessCount}</span>
@@ -160,7 +148,7 @@ export default class Accesses extends React.Component<{}, State> {
                         </div>
                         <div className="crc-card">
                             <div className="crcc-title">
-                                <span>{this.state.lessAccessedCategory.category}</span>
+                                <span>{this.state.lessAccessedCategory.category.split(' > ')[this.state.lessAccessedCategory.category.split(' > ').length - 1]}</span>
                             </div>
                             <div className="crcc-content">
                                 <span>{this.state.lessAccessedCategory.accessCount}</span>
@@ -181,15 +169,15 @@ export default class Accesses extends React.Component<{}, State> {
                         </div>
                     </div>
                     <div className="cc-body">
-                        {seila2.map((naosei, index) => (
+                        {this.state.mostAccessedCategories.map((cat, index) => (
                             <div className="ccb-item">
                                 <div className="col-1">
-                                    {naosei.category}
+                                    <span>{cat.category.split(' > ')[cat.category.split(' > ').length - 1]}</span>
                                 </div>
                                 <div className="col-2">
-                                    {naosei.views}
+                                    {cat.variation.accessCount}
                                 </div>
-                                <div style={{ width: `${naosei.rate}%` }} className="col-3"></div>
+                                <div style={{ width: `${(index === 0 ? 100 : (100 * parseInt(cat.variation.accessCount) / parseInt(this.state.mostAccessedCategories[0].variation.accessCount)))}%` }} className="col-3"></div>
                             </div>
                         ))}
                     </div>

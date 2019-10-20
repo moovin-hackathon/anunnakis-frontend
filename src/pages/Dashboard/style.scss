@@ -56,15 +56,15 @@
       .map-prods {
         display: flex;
         border-bottom: 1px solid grey;
-        padding: 0 100px;
+        justify-content: center;
         padding-bottom: 30px;
 
         .mapp-prod {
           display: flex;
           flex: 1;
           flex-direction: column;
-          justify-content: center;
           align-items: center;
+          max-width: 200px;
 
           img {
             width: 70px;
@@ -76,6 +76,7 @@
 
           span {
             font-size: 14px;
+            text-overflow: ellipsis;
           }
 
           a {

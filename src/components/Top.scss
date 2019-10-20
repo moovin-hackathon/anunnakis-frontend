@@ -8,12 +8,23 @@
     background-color: grey;
 
     .bell-icon {
+        position: relative;
         cursor: pointer;
         margin-right: 190px;
 
         img {
             width: 20px;
             height: 25px;
+        }
+
+        .notification-badge {
+            right: -10px;
+            top: -10px;
+            position: absolute;
+            color: white;
+            background-color: #0cba4e;
+            padding: 1px 6px;
+            border-radius: 100%;
         }
     }
 

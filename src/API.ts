@@ -27,7 +27,11 @@ export const getNeedSellProducts: () => AxiosPromise<Response<Product>> = () => 
 
 export const getProducts: () => AxiosPromise<Response<Product>> = () => api.get('/product')
 
-export const getNotifications: () => AxiosPromise<Response<Notification>> = () => api.get('/notification?viewed=false')
+export const getNotifications: () => AxiosPromise<Response<Notification>> = () => api.get('/notification?viewed=false&size=5')
+
+export const getMostAccessedCategories: () => AxiosPromise<CategoryResponse[]> = () => api.get('/category/most_access?size=3')
+
+export const dismissNotification: (id: Notification['id']) => AxiosPromise<any> = (id: Notification['id']) => api.put(`/notification/${id}/viewed`)
 
 export interface CategoryResponse {
     category: string

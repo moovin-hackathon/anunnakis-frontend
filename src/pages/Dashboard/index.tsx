@@ -135,18 +135,18 @@ export default class Dashboard extends React.Component<{}, State> {
                         <div className="cr-cards">
                             <div className="crc-card">
                                 <div className="crcc-title">
-                                    <span>{this.state.mostAccessedCategory.category}</span>
+                                    <span>{this.state.mostAccessedCategory.category.split(' > ')[this.state.mostAccessedCategory.category.split(' > ').length - 1]}</span>
                                 </div>
                                 <div className="crcc-content">
-                                    {this.state.mostAccessedCategory.accessCount}
+                                    <span>{this.state.mostAccessedCategory.accessCount}</span>
                                 </div>
                             </div>
                             <div className="crc-card">
                                 <div className="crcc-title">
-                                    <span>{this.state.lessAccessedCategory.category}</span>
+                                    <span>{this.state.lessAccessedCategory.category.split(' > ')[this.state.lessAccessedCategory.category.split(' > ').length - 1]}</span>
                                 </div>
                                 <div className="crcc-content">
-                                    {this.state.lessAccessedCategory.accessCount}
+                                    <span>{this.state.lessAccessedCategory.accessCount}</span>
                                 </div>
                             </div>
                         </div>
@@ -176,7 +176,7 @@ export default class Dashboard extends React.Component<{}, State> {
                         </div>
                     </div>
                     <div className="card-controller">
-                        <button>Ver +</button>
+                        <button onClick={() => window.location.href = "/sales"}>Ver +</button>
                     </div>
                 </div>
             </Card>

@@ -69,12 +69,16 @@
         .col-2 {
           display: flex;
           padding-left: 15px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
           flex: 1;
           border: 1px solid rgba(0, 0, 0, 0.2);
           .si-prod {
             display: flex;
             align-items: center;
             font-size: 13px;
+            overflow: hidden;
 
             .sp-photo {
               min-width: 80px;
@@ -89,6 +93,7 @@
             }
 
             .sp-info {
+              text-overflow: ellipsis;
               a {
                 text-decoration: none;
                 &:hover {

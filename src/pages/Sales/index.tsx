@@ -86,13 +86,13 @@ export default class Sales extends React.Component<{}, State> {
 												</div>
 											</div>
 											<div className="col-3">
-												<span>{prod.category}</span>
+												<span>{prod.category.split(' > ')[prod.category.split(' > ').length - 1]}</span>
 											</div>
 											<div className="col-4">
 												<span>{prod.variations[0].accessCount}</span>
 											</div>
 											<div className="col-5">
-											<span>{prod.variations[0].saleCount}</span>
+												<span>{prod.variations[0].saleCount}</span>
 											</div>
 										</div>
 									))}
