@@ -1,11 +1,16 @@
 .Top {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     position: absolute;
     height: 60px;
     width: 100%;
     background-color: grey;
+
+    .logo {
+        margin-left: 230px;
+        width: 80px;
+    }
 
     .bell-icon {
         position: relative;

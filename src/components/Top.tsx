@@ -2,6 +2,7 @@ import React from 'react'
 import './Top.scss'
 
 import BellIcon from '../assets/icons/bell.png'
+import Logo from '../assets/icons/logo.png'
 import { getNotifications, Notification, dismissNotification } from '../API'
 
 interface INotification {
@@ -44,6 +45,8 @@ const Top: React.FC<{}> = () => {
 
     return (
         <div className="Top">
+            <img alt="logo" className="logo" src={Logo} />
+
             <div onClick={() => setMenuOpen(!menuOpen)} className="bell-icon">
                 <img alt="bell" src={BellIcon} />
                 {!!notifications.total && (
