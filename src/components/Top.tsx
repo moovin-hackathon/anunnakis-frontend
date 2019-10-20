@@ -57,7 +57,7 @@ const Top: React.FC<{}> = () => {
                     <div key={index} className="tnc-notification">
                         <span onClick={() => dismiss(notification.id)}>X</span>
                         <div>
-                            <img />
+                            <img src={BellIcon} />
                         </div>
                         <div>
                             {`${notification.code}: ${notification.message}`}
