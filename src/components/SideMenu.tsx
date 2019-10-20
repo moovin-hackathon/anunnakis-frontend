@@ -11,6 +11,9 @@ const SideMenu: React.FC<Props> = (props) => {
 
     const [state, setState] = React.useState<State>(initialState)
 
+    let url = window.location.href.split('/')
+    let currentPage = url[url.length - 1]
+
     return (
         <div className={`SideMenu${state.menuOpened ? ' opened' : ''}`}>
             <div className="sm-toggle-menu-container">
@@ -19,7 +22,7 @@ const SideMenu: React.FC<Props> = (props) => {
                 </div>
             </div>
             {props.options.map((option, index) => (
-                <a key={index} className="sm-dashboard-menu-option" href={`/${option.name}`}>
+                <a key={index} className={`sm-dashboard-menu-option${currentPage === option.name ? ' active' : ''}`} href={`/${option.name}`}>
                     <img alt={option.label} src={OptionIcons[option.name as OptionName]} />
                     <span>{option.label}</span>
                 </a>

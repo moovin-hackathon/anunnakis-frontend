@@ -4,8 +4,6 @@ import './Top.scss'
 import BellIcon from '../assets/icons/bell.png'
 import { getNotifications, Notification } from '../API'
 
-let notifications = ['sadhashid', 'dsaihdoiashdoasihd', 'dsahdoiahdoiahdosaihd', 'idhsadoihsadoihoaihsd']
-
 interface INotification {
     notifications: Notification[]
     total: number
@@ -20,9 +18,12 @@ const Top: React.FC<{}> = () => {
         total: 0
     })
 
-    setInterval(() => {
-        !menuOpen && fetchNotifications()
-    }, 5000)
+    React.useEffect(() => {
+        setInterval(() => {
+            !menuOpen && fetchNotifications()
+        }, 5000)
+    }, [])
+
 
     let fetchNotifications = () => {
         getNotifications()

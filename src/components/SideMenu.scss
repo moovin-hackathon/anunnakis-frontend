@@ -77,6 +77,14 @@
       background-color: rgba(255, 255, 255, 0.5);
     }
 
+    &.active {
+      border-top: 1px solid white;
+      border-bottom: 1px solid white;
+      span {
+        color: #0cba4e;
+      }
+    }
+
     img {
       width: 25px;
     }

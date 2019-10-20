@@ -27,18 +27,18 @@ export default class Sales extends React.Component<{}, State> {
 						<div className="sc-header">
 							<div className="sch-filter-select">
 								<select>
-									<option>nuzei</option>
+									<option>Filtros</option>
 								</select>
 							</div>
 							<div className="sch-category-select">
 								<select>
-									<option>nuzei2</option>
+									<option>Categorias</option>
 								</select>
 							</div>
 							<div className="sch-size-changer">
 								<span>Visualizar</span>
 								<select>
-									<option>nuzei3</option>
+									<option>50</option>
 								</select>
 							</div>
 						</div>
