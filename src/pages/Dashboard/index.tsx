@@ -2,19 +2,30 @@ import React from 'react'
 import './style.scss'
 import Card from '../../components/Card'
 import { OptionIcons } from '../../toolkit/utils'
+import { getMostAccessedProducts } from '../../API'
 
 let seila = [1, 1, 1, 1, 1, 1, 1, 1]
 
-const Dashboard: React.FC = () => (
-    <div className="Dashboard">
-        <AccessesCard />
-        <div className="row-cards">
-            <SearchesCard />
-            <StockCard />
-        </div>
-        <SalesCard />
-    </div>
-)
+export default class Dashboard extends React.Component<{}, {}> {
+
+    componentDidMount() {
+        getMostAccessedProducts()
+            .then(res => console.log(res))
+    }
+
+    render() {
+        return (
+            <div className="Dashboard">
+                <AccessesCard />
+                <div className="row-cards">
+                    <SearchesCard />
+                    <StockCard />
+                </div>
+                <SalesCard />
+            </div>
+        )
+    }
+}
 
 const SearchesCard: React.FC = () => (
     <Card title="Pesquisas" icon={OptionIcons['search']}>
@@ -125,7 +136,7 @@ const AccessesCard: React.FC = () => (
                 </div>
             </div>
             <div className="card-controller">
-                <button onClick={() => window.location.href="/accesses"}>Ver +</button>
+                <button onClick={() => window.location.href = "/accesses"}>Ver +</button>
             </div>
         </div>
     </Card>
@@ -172,5 +183,3 @@ const SalesCard: React.FC = () => (
         </div>
     </Card>
 )
-
-export default Dashboard
